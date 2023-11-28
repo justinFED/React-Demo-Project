@@ -3,9 +3,13 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
+import { useState } from "react";
+
 function App() {
+  useState();
+
   function handleSelect(selectedButton) {
-    console.log("Hello World!");
+    tabContent = selectedButton;
   }
 
   return (
@@ -32,6 +36,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+            {tabContent}
         </section>
       </main>
     </div>
